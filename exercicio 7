@@ -1,0 +1,29 @@
+dist = [
+    [0, 310, 716, 408, 852],
+    [310, 0, 470, 705, 1144],
+    [716, 470, 0, 1119, 1553],
+    [408, 705, 1119, 0, 429],
+    [852, 1144, 1553, 429, 0]
+]
+
+cidades = ["Curitiba", "Florianópolis", "Porto Alegre", "São Paulo", "Rio de Janeiro"]
+
+for a, c in enumerate(cidades):
+    print(f"{a} - {c}")
+
+roteiro = []
+while True:
+    x = int(input("Informe cidade (ou -1 para sair): "))
+    if x == -1: break
+    roteiro.append(x)
+
+# Mostrar roteiro
+print("\nRoteiro:")
+total = 0
+for z in range(len(roteiro)-1):
+    a, b = roteiro[z], roteiro[z+1]
+    d = dist[a][b]
+    print(f"{cidades[a]} -> {cidades[b]}: {d} km")
+    total += d
+
+print(f"Distância total: {total} km")

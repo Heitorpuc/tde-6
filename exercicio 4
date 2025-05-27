@@ -1,0 +1,22 @@
+import random
+
+m = [[random.randint(10, 99) for _ in range(5)] for _ in range(5)]
+
+print("Matriz:")
+for l in m: print(l)
+
+
+soma = sum(m[2]) + sum(m[a][2] for a in range(5)) - m[2][2]
+print("\nVersão A (cruz):", soma)
+
+
+soma = sum(m[0] + m[4]) + sum(m[a][0] + m[a][4] for a in range(1,4))
+print("Versão B (borda):", soma)
+
+
+soma = sum(m[a][b] for a in range(5) for b in range(5) if (a+b)%2==0)
+print("Versão C (quadriculado):", soma)
+
+
+soma = sum(m[a][b] for a in range(5) for b in range(5) if (a+b)%2==0)
+print("Versão D (xadrez):", soma)

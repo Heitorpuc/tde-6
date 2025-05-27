@@ -1,0 +1,8 @@
+import random
+
+m = [random.sample(range(100, 1000), 16)[a*4:(a+1)*4] for a in range(4)]
+maior, lin = max((m[a][b], a) for a in range(4) for b in range(4))
+menor = min(m[lin])
+
+for linha in m: print(linha)
+print(f"Maior: {maior}, Menor da linha: {menor}")

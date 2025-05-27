@@ -1,0 +1,10 @@
+import random
+
+m = [[random.randint(10, 99) for _ in range(7)] for _ in range(15)]
+print("Original:"); [print(l) for l in m]
+
+flat = [x for l in m for x in l]
+nova = [x for x in flat if x%2==0] + [x for x in flat if x%2!=0]
+m = [nova[a*7:(a+1)*7] for a in range(15)]
+
+print("\nModificada:"); [print(l) for l in m]

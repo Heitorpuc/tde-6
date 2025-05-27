@@ -1,0 +1,8 @@
+matriz = [[int(input(f"M[{a}][{b}]: ")) for b in range(3)] for a in range(3)]
+num = int(input("Número para multiplicar: "))
+
+resultado = [[matriz[a][b] * num for b in range(3)] for a in range(3)]
+
+print("\nMatriz resultante:")
+for linha in resultado:
+    print(linha)
